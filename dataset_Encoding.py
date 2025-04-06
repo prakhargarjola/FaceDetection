@@ -17,15 +17,14 @@ registered_faces = []
 
 saved_faces = 'dataset/saved_faces.pkl'
 
-for f_count in range(img_number):
-    face_1 = f'dataset/{f_count}.jpg'
+for f_count in range(1, img_number+1):
+    face_1 = f'dataset/face_{f_count}.jpg'
     img = cv2.imread(face_1)
 
     faces = app.get(img)
     for face in faces:
         embedding = face.embedding.reshape(1, -1)
         registered_faces.append(embedding)
-
 
 with open(saved_faces, 'wb') as f:
             pickle.dump(registered_faces, f)
