@@ -11,7 +11,7 @@ img_number = len(img_file)
 
 
 
-
+app = FaceAnalysis(name='buffalo_l')
 app.prepare(ctx_id=0)
 registered_faces = []
 
